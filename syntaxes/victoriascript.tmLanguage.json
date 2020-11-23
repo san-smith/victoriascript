@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "VictoriaScript",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "\\b(NOT|AND|OR|no|yes)\\b"
+				},
+				{
+					"name": "keyword.other.unit",
+					"match": "\\b(owner|controller|add_core|remove_core|trade_goods|life_rating|terrain|primary_culture|owns|capital|exists|naval_base|fort|railroad)\\b"
+				},
+				{
+					"name": "keyword.other.decision",
+					"match": "\\b(potential|allow|effect|picture)\\b"
+				},
+				{
+					"name": "keyword.operator",
+					"match": "(=|{|})"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.victoriascript",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.victoriascript",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment",
+			"begin": "#",
+			"end": "\n"
+		},
+		"constants": {
+			"patterns": [
+				{
+					"match": "\\b([0-9]{1,4})\\.([0-9]{1,2})\\.([0-9]{1,2})\\b",
+					"name": "constant.other.victoriascript"
+				},
+				{
+					"match": "\\b([0-9]+)\\b",
+					"name": "constant.numeric"
+				},
+				{
+					"match": "\\b([A-Z]{3})\\b",
+					"name": "constant.countries"
+				}
+			]
+		}
+	},
+	"scopeName": "source.txt"
+}

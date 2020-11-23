@@ -1,0 +1,33 @@
+{
+    "name": "victoriascript",
+    "displayName": "VictoriaScript",
+    "description": "",
+    "publisher": "san-smith",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "victoriascript",
+            "aliases": ["VictoriaScript", "victoriascript"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "victoriascript",
+            "scopeName": "source.txt",
+            "path": "./syntaxes/victoriascript.tmLanguage.json"
+        }],
+        "themes": [
+            {
+                "label": "Victoria",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Victoria-color-theme.json"
+            }
+        ]
+    }
+}
